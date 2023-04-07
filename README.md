@@ -5,5 +5,4 @@ Introduction
 * Accessing and managing the records in the database
 
 1) What is Database:
-
-
+Database
