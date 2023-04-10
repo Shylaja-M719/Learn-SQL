@@ -1,0 +1,149 @@
+SQL :- (Structured Query Langauge)
+* Perform operations on the records stored in the database, such as updating, inserting, deleting, Creating and Modifing.
+
+* Itd designed to maintaining the data in relational database management system.
+
+Uses:
+* Sql users is to insert, update and delete the data
+* Sql allows the users to retrieve the data from the RDBMS
+* Helps them to describe the structured data
+* Allows sql users to create, drop and manipulate the database and its tables.
+* Allows creating the view, stored procedure and fucntions in the relational database
+* Define the data and modify that stored data in the relational database
+* Set the permissions or constraints on the table columns, views and procedures
+
+
+Advantages of SQL:
+* No Programming needed
+* HighSpeed query Processing
+* Standardized Language
+* Portability
+* Interactive language
+
+Disadvantages of SQL:
+* Cost
+* Interface is complex
+* Partial Databased Control
+
+SELECT Statement: read the data from the sql database
+synatx: SELECT column_name1, column_name2...
+	  [FROM table_name]
+	  [WHERE condition]
+	  [ORDER BY order_column_name1[ASC|DESC]...]
+
+Example: select emp_id, first_name,last_name
+	   from employee
+	   where salary = 10000
+	   order by last_name;
+
+
+UPDATE STATEMENT: Changes or modifies the stored data in the SQL
+syntax: UPDATE table_name
+	  SET column_name1 = new_value_1,
+            column_name2 = new_value_2
+        [WHERE condition];
+
+Example: update employees_details
+	   set salary = 10000
+	   where emp_id = 10;
+
+DELETE STATEMENT: Deletes the stored data from the SQL statement
+syntax: DELETE FROM table_name
+	  [WHERE condition];
+Example: Delete from Employee_details
+	   where First_Name = 'Shylu';
+
+
+
+CREATE STATEMENT: Created the new table in the sql database
+syntax: CREATE TABLE table_name
+( column_name1 data_type[column1 constraint(s)],	
+  column_name2 data_type[column2 constraint(s)]...
+
+primary key(one or more col)
+);
+Example: Create table employee_details(
+		emp_id number(4) not null,
+		first_name varchar(30),
+		last_name varchar(30),
+		salary money,
+		city varchar(30),
+		primary key(emp_id));
+
+
+
+ALTER TABLE STATEMENT: sql statement adds, deletes and modifies the columns of the table in the sql database.
+synatx: ALTER TABLE table_name ADD column_name datatype[(size)];
+example: alter table employee_details
+		add designation varchar(18);
+
+
+
+DROP TABLE STATEMENT: deletes or remove the table and the structure, view , permissions and triggers associated with the table
+syntax: DROP TABLE[IF EXISTS]
+table_name1, table_name2.....;
+example : drop table employeeS_details;
+
+
+
+CREATE DATABASE Statement: create the new database 
+syntax: CREATE DATABASE database_name;
+example: create database company;
+
+
+
+DROP DATABASE Statement: SQL statement deletes the eisting database with all the data tables and views.
+syntax: DROP DATABASE database_name;
+example: drop database company;
+
+
+
+INSERT INTO STATEMENT:
+insert the data or records in te existing table of the sql database.
+syntax: INSERT INTO table_name
+(column_name1,column_name2...) values(value1,value....);
+
+
+TRUNCATE TABLE Statement: deletes all the stored records from the table
+syntax: TRUNCATE TABLE table_name;
+example: Truncate table employee-details;
+
+
+DESCRIBE Statement: Tells something about the specified table or view in the query
+syntax: DESCRIBE table_name|view_name;
+example: describe employee_details;
+
+
+DISTINCT Clause: the distinct values from the specified columns of the database table.
+syntax: SELECT DISTINCT column_name1, column_name2....
+from table_name;
+example: select distinct city,salary
+	   from employee_details;
+
+
+COMMIT statement: SQL statement saves the changes permanently, which are done in the transaction of the SQL database
+syntax: COMMIT
+example: delete from employee_details
+	   where slary = 30000;
+	   commit;
+
+
+
+ROLLBACK Statement: SQL statement undo the transactions and operations which are not yet saved to the SQL Database
+syntax: ROLLBACK
+example:delete from employee_details
+where city = mumbai;
+rollback;
+
+
+CREATE INDEX Statement: Create the new index 
+syntax: CREATE INDEX index_name
+on table_name(column_name1, column_nmae2.....);
+example: create index idx_first_name 
+ 	   on employee_details(first_name);
+
+ 
+
+
+
+
